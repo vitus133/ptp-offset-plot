@@ -20,7 +20,8 @@ The `plot.py` generates a plot to visually identify time error variations agains
 Fetch the logs from the `linuxptp-daemon` DaemonSet and extract the master offset values into a text file.
 
 ```bash
-oc -n openshift-ptp -c linuxptp-daemon-container logs ds/linuxptp-daemon | grep "master offset" | awk '{print $5}' > raw_offsets.txt
+oc -n openshift-ptp -c linuxptp-daemon-container logs ds/linuxptp-daemon \
+   | grep "master offset" | awk '{print $5}' > raw_offsets.txt
 
 ```
 
